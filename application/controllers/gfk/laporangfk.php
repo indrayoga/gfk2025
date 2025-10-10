@@ -1800,11 +1800,11 @@ class Laporangfk extends Rumahsakit
                     );
                 } else if ($x == 'B') {
                     $objPHPExcel->getActiveSheet()->getStyle($x . $baris)->getAlignment()->applyFromArray(
-                        array('horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER, 'vertical'   => PHPExcel_Style_Alignment::VERTICAL_CENTER, 'rotation'   => 0,)
+                        array('horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_LEFT, 'vertical'   => PHPExcel_Style_Alignment::VERTICAL_CENTER, 'rotation'   => 0,)
                     );
                 } else if ($x == 'C') {
                     $objPHPExcel->getActiveSheet()->getStyle($x . $baris)->getAlignment()->applyFromArray(
-                        array('horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER, 'vertical'   => PHPExcel_Style_Alignment::VERTICAL_CENTER, 'rotation'   => 0,)
+                        array('horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_LEFT, 'vertical'   => PHPExcel_Style_Alignment::VERTICAL_CENTER, 'rotation'   => 0,)
                     );
                 } else if ($x == 'D') {
                     $objPHPExcel->getActiveSheet()->getStyle($x . $baris)->getAlignment()->applyFromArray(
@@ -1812,11 +1812,11 @@ class Laporangfk extends Rumahsakit
                     );
                 } else if ($x == 'E') {
                     $objPHPExcel->getActiveSheet()->getStyle($x . $baris)->getAlignment()->applyFromArray(
-                        array('horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER, 'vertical'   => PHPExcel_Style_Alignment::VERTICAL_CENTER, 'rotation'   => 0,)
+                        array('horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_RIGHT, 'vertical'   => PHPExcel_Style_Alignment::VERTICAL_CENTER, 'rotation'   => 0,)
                     );
                 } else if ($x == 'F') {
                     $objPHPExcel->getActiveSheet()->getStyle($x . $baris)->getAlignment()->applyFromArray(
-                        array('horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_LEFT, 'vertical'   => PHPExcel_Style_Alignment::VERTICAL_CENTER, 'rotation'   => 0,)
+                        array('horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_RIGHT, 'vertical'   => PHPExcel_Style_Alignment::VERTICAL_CENTER, 'rotation'   => 0,)
                     );
                 } else if ($x == 'G') {
                     $objPHPExcel->getActiveSheet()->getStyle($x . $baris)->getAlignment()->applyFromArray(
