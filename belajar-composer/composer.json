@@ -1,0 +1,6 @@
+{
+    "require": {
+        "monolog/monolog": "*",
+        "mailjet/mailjet-apiv3-php": "^1.6"
+    }
+}
