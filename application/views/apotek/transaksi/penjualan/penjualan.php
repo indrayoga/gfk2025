@@ -24,7 +24,7 @@
                                                     <!--li><button class="btn" type="button" onclick='window.location="<-?php echo base_url() ?>index.php/transapotek/penjualan/tambahpenjualan"'> <i class="icon-plus"></i> Tambah</button></li-->                                                    
                                                     <!--<li><a href="<?php echo base_url() ?>index.php/transapotek/penjualan/tambahpenjualan"> <i class="icon-plus"></i> Tambah (Ctrl + R)</a></li>-->
                                                     
-                                                    <li><a href="<?=base_url('index.php/transapotek/laporanapt/rl1excelpenjualanobat/'.$periodeawal.'/'.$periodeakhir.'/'.$id_puskesmas)?>"> <i class="icon-print"></i> Cetak</a></li>
+                                                    <li><a href="<?=base_url('index.php/transapotek/laporanapt/rl1excelpenjualanobat/'.$periodeawal.'/'.$periodeakhir.'/'.$id_puskesmas)?>"> <i class="icon-print"></i> Cetak Untuk Lampiran BAST</a></li>
                                                     <li>
                                                         <a class="accordion-toggle minimize-box" data-toggle="collapse" href="#div-1">
                                                             <i class="icon-chevron-up"></i>
