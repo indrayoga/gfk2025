@@ -599,6 +599,7 @@ class Laporanapt extends Rumahsakit
 
 		$bulan = date('m');
 		$tahun = date('Y');
+		$kd_kategori = '';
 		if ($this->input->post('kd_unit_apt') != '') {
 			$kd_unit_apt = $this->input->post('kd_unit_apt');
 		} else {
@@ -610,6 +611,9 @@ class Laporanapt extends Rumahsakit
 		}
 		if ($this->input->post('tahun') != '') {
 			$tahun = $this->input->post('tahun');
+		}
+		if ($this->input->post('kd_kategori') != '') {
+			$kd_kategori = $this->input->post('kd_kategori');
 		}
 		$cssfileheader = array('bootstrap.css', 'bootstrap-responsive.min.css', 'font-awesome.min.css', 'style.css', 'prettify.css', 'jquery-ui.css', 'DT_bootstrap.css', 'responsive-tables.css', 'datepicker.css', 'theme.css');
 		$jsfileheader = array(
@@ -635,10 +639,11 @@ class Laporanapt extends Rumahsakit
 
 		$data = array(
 			'sumberdana' => $this->mlaporanapt->sumberdana(),
-			'items' => $this->mlaporanapt->getMutasiObat($kd_unit_apt, $bulan, $tahun),
+			'items' => $this->mlaporanapt->getMutasiObat($kd_unit_apt, $bulan, $tahun, $kd_kategori),
 			'unitapotek' => $this->mlaporanapt->ambilData('apt_unit'),
 			'bulan' => $bulan,
 			'tahun' => $tahun,
+			'kd_kategori' => $kd_kategori,
 			'kd_unit_apt' => $kd_unit_apt
 		);
 
@@ -668,9 +673,16 @@ class Laporanapt extends Rumahsakit
 		}
 		// die($triwulan);
 		$tahun = date('Y');
+		$kd_kategori = '';
+
 		if ($this->input->post('tahun') != '') {
 			$tahun = $this->input->post('tahun');
 		}
+
+		if ($this->input->post('kd_kategori') != '') {
+			$kd_kategori = $this->input->post('kd_kategori');
+		}
+
 		$cssfileheader = array('bootstrap.css', 'bootstrap-responsive.min.css', 'font-awesome.min.css', 'style.css', 'prettify.css', 'jquery-ui.css', 'DT_bootstrap.css', 'responsive-tables.css', 'datepicker.css', 'theme.css');
 		$jsfileheader = array(
 			'vendor/modernizr-2.6.2-respond-1.1.0.min.js',
@@ -695,9 +707,10 @@ class Laporanapt extends Rumahsakit
 
 		$data = array(
 			'sumberdana' => $this->mlaporanapt->sumberdana(),
-			'items' => $this->mlaporanapt->getMutasiObatTriwulan($tahun, $triwulan),
+			'items' => $this->mlaporanapt->getMutasiObatTriwulan($tahun, $triwulan, $kd_kategori),
 			'unitapotek' => $this->mlaporanapt->ambilData('apt_unit'),
 			'triwulan' => $triwulan,
+			'kd_kategori' => $kd_kategori,
 			'tahun' => $tahun
 		);
 
@@ -773,6 +786,8 @@ class Laporanapt extends Rumahsakit
 		$tahun = date('Y');
 		$kd_nomenklatur = '';
 		$bulan_kebutuhan = 18;
+		$kd_kategori = '';
+
 		if ($this->input->post('kd_unit_apt') != '') {
 			$kd_unit_apt = $this->input->post('kd_unit_apt');
 		} else {
@@ -796,6 +811,9 @@ class Laporanapt extends Rumahsakit
 		if ($this->input->post('bulan_kebutuhan') != '') {
 			$bulan_kebutuhan = $this->input->post('bulan_kebutuhan');
 		}
+		if ($this->input->post('kd_kategori') != '') {
+			$kd_kategori = $this->input->post('kd_kategori');
+		}
 
 		$cssfileheader = array('bootstrap.css', 'bootstrap-responsive.min.css', 'font-awesome.min.css', 'style.css', 'prettify.css', 'jquery-ui.css', 'DT_bootstrap.css', 'responsive-tables.css', 'datepicker.css', 'theme.css');
 		$jsfileheader = array(
@@ -821,7 +839,7 @@ class Laporanapt extends Rumahsakit
 
 		$data = array(
 			'sumberdana' => $this->mlaporanapt->sumberdana(),
-			'items' => $this->mlaporanapt->getMutasiObatBulanan($kd_unit_apt, $bulan, $bulan1, $tahun, $kd_nomenklatur, $kategori),
+			'items' => $this->mlaporanapt->getMutasiObatBulanan($kd_unit_apt, $bulan, $bulan1, $tahun, $kd_nomenklatur, $kategori, $kd_kategori),
 			'unitapotek' => $this->mlaporanapt->ambilData('apt_unit'),
 			'bulan' => $bulan,
 			'bulan1' => $bulan1,
@@ -829,6 +847,7 @@ class Laporanapt extends Rumahsakit
 			'bulan_kebutuhan' => $bulan_kebutuhan,
 			'kd_nomenklatur' => $kd_nomenklatur,
 			'kategori' => $kategori,
+			'kd_kategori' => $kd_kategori,
 			'kd_unit_apt' => $kd_unit_apt
 		);
 
@@ -847,6 +866,7 @@ class Laporanapt extends Rumahsakit
 		$bulan = date('m');
 		$bulan1 = date('m');
 		$tahun = date('Y');
+		$kd_kategori = '';
 		if ($this->input->post('kd_unit_apt') != '') {
 			$kd_unit_apt = $this->input->post('kd_unit_apt');
 		} else {
@@ -862,6 +882,11 @@ class Laporanapt extends Rumahsakit
 		if ($this->input->post('tahun') != '') {
 			$tahun = $this->input->post('tahun');
 		}
+
+		if ($this->input->post('kd_kategori') != '') {
+			$kd_kategori = $this->input->post('kd_kategori');
+		}
+
 		$cssfileheader = array('bootstrap.css', 'bootstrap-responsive.min.css', 'font-awesome.min.css', 'style.css', 'prettify.css', 'jquery-ui.css', 'DT_bootstrap.css', 'responsive-tables.css', 'datepicker.css', 'theme.css');
 		$jsfileheader = array(
 			'vendor/modernizr-2.6.2-respond-1.1.0.min.js',
@@ -886,11 +911,13 @@ class Laporanapt extends Rumahsakit
 
 		$data = array(
 			'sumberdana' => $this->mlaporanapt->sumberdana(),
-			'items' => $this->mlaporanapt->getMutasiObatBulanan($kd_unit_apt, $bulan, $bulan1, $tahun),
+			'items' => $this->mlaporanapt->getMutasiObatBulanan($kd_unit_apt, $bulan, $bulan1, $tahun, $kd_kategori),
 			'unitapotek' => $this->mlaporanapt->ambilData('apt_unit'),
 			'bulan' => $bulan,
 			'bulan1' => $bulan1,
 			'tahun' => $tahun,
+			'kd_kategori' => $kd_kategori,
+
 			'kd_unit_apt' => $kd_unit_apt
 		);
 
@@ -3474,7 +3501,7 @@ class Laporanapt extends Rumahsakit
 		header("Location: " . base_url() . "download/kartustokobat.xls");
 	}
 
-	public function excellplpo($bulan = "", $tahun = "", $kd_unit_apt = "")
+	public function excellplpo($bulan = "", $tahun = "", $kd_unit_apt = "", $kd_kategori = '')
 	{
 		if ($kd_unit_apt == "NULL") $kd_unit_apt = "";
 		$this->load->library('phpexcel');
@@ -3633,7 +3660,7 @@ class Laporanapt extends Rumahsakit
 		$objPHPExcel->getActiveSheet()->setCellValue('M10', 'TOTAL');
 
 		$items = array();
-		$items = $this->mlaporanapt->getMutasiObat($kd_unit_apt, $bulan, $tahun);
+		$items = $this->mlaporanapt->getMutasiObat($kd_unit_apt, $bulan, $tahun, $kd_kategori);
 		//debugvar($kd_unit_apt);
 		$baris = 11;
 		$nomor = 1;
@@ -4104,7 +4131,7 @@ class Laporanapt extends Rumahsakit
 		header("Location: " . base_url() . "download/indikatorobat.xls");
 	}
 
-	public function excellplpobulanan2($bulan = "", $bulan1 = "", $tahun = "", $kd_unit_apt = "", $kd_nomenklatur = "", $bulan_kebutuhan = "", $kategori = "")
+	public function excellplpobulanan2($bulan = "", $bulan1 = "", $tahun = "", $kd_unit_apt = "", $kd_nomenklatur = "", $bulan_kebutuhan = "", $kategori = "", $kd_kategori)
 	{
 		if ($kd_unit_apt == "NULL") $kd_unit_apt = "";
 		$this->load->library('PHPExcel');
@@ -4231,7 +4258,7 @@ class Laporanapt extends Rumahsakit
 		$objPHPExcel->getActiveSheet()->setCellValue('N10', 'TOTAL');
 
 		$items = array();
-		$items = $this->mlaporanapt->getMutasiObatBulanan($kd_unit_apt, $bulan, $bulan1, $tahun, $kd_nomenklatur, $kategori);
+		$items = $this->mlaporanapt->getMutasiObatBulanan($kd_unit_apt, $bulan, $bulan1, $tahun, $kd_nomenklatur, $kategori, $kd_kategori);
 		//debugvar($kd_unit_apt);
 		$baris = 11;
 		$nomor = 1;
@@ -6300,7 +6327,7 @@ class Laporanapt extends Rumahsakit
 		header("Location: " . base_url() . "download/lap_program_bulanan.xls");
 	}
 
-	public function excellplpobulanan($bulan = "", $bulansatu = "", $tahun = "", $kd_unit_apt = "")
+	public function excellplpobulanan($bulan = "", $bulansatu = "", $tahun = "", $kd_unit_apt = "", $kd_kategori = '')
 	{
 		if ($kd_unit_apt == "NULL") $kd_unit_apt = "";
 		$this->load->library('phpexcel');
@@ -6404,7 +6431,7 @@ class Laporanapt extends Rumahsakit
 		$objPHPExcel->getActiveSheet()->setCellValue ('J10','KECUKUPAN BULAN');
 		*/
 		$items = array();
-		$items = $this->mlaporanapt->getMutasiObatBulanan('', $bulan, $bulansatu, $tahun);
+		$items = $this->mlaporanapt->getMutasiObatBulanan('', $bulan, $bulansatu, $tahun, $kd_kategori);
 		//debugvar($kd_unit_apt);
 		$baris = 9;
 		$nomor = 1;
@@ -7106,7 +7133,7 @@ class Laporanapt extends Rumahsakit
 		header("Location: " . base_url() . "download/lap_penerimaan.xls");
 	}
 
-	public function rl1excelmutasitriwulan($triwulan = "", $tahun = "")
+	public function rl1excelmutasitriwulan($triwulan = "", $tahun = "", $kd_kategori = '')
 	{
 
 		if ($triwulan == '1') {
@@ -7326,7 +7353,7 @@ class Laporanapt extends Rumahsakit
 		$baris = 10;
 		$nomor = 1;
 		$sumberdana = $this->mlaporanapt->sumberdana();
-		$items = $this->mlaporanapt->getMutasiObatTriwulan($tahun, $triwulan);
+		$items = $this->mlaporanapt->getMutasiObatTriwulan($tahun, $triwulan, $kd_kategori);
 		$no_sd = 1;
 		$array_romawi	= array(1 => "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII");
 		foreach ($sumberdana as $sd) {
