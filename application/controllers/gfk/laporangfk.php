@@ -2811,18 +2811,18 @@ class Laporangfk extends Rumahsakit
         $objPHPExcel->getActiveSheet()->getColumnDimensionByColumn(15)->setWidth(12); //QTY*/
 
         $objPHPExcel->getActiveSheet()->getColumnDimensionByColumn(0)->setWidth(4.14); //NO
-        $objPHPExcel->getActiveSheet()->getColumnDimensionByColumn(1)->setWidth(30); //NODISTRIBUSI
-        $objPHPExcel->getActiveSheet()->getColumnDimensionByColumn(2)->setWidth(40);  //TGL DISTRIBUSI
-        $objPHPExcel->getActiveSheet()->getColumnDimensionByColumn(3)->setWidth(15); //UNIT APOTEK
+        $objPHPExcel->getActiveSheet()->getColumnDimensionByColumn(1)->setWidth(40); //NODISTRIBUSI
+        $objPHPExcel->getActiveSheet()->getColumnDimensionByColumn(2)->setWidth(25);  //TGL DISTRIBUSI
+        $objPHPExcel->getActiveSheet()->getColumnDimensionByColumn(3)->setWidth(25); //UNIT APOTEK
         $objPHPExcel->getActiveSheet()->getColumnDimensionByColumn(4)->setWidth(30); //KODE OBAT
         $objPHPExcel->getActiveSheet()->getColumnDimensionByColumn(5)->setWidth(10); //NAMA OBAT
         $objPHPExcel->getActiveSheet()->getColumnDimensionByColumn(6)->setWidth(10); //NAMA OBAT
         $objPHPExcel->getActiveSheet()->getColumnDimensionByColumn(7)->setWidth(10); //NAMA OBAT
         //$objPHPExcel->getActiveSheet()->getColumnDimensionByColumn(6)->setWidth(10); //SATUAN
         //$objPHPExcel->getActiveSheet()->getColumnDimensionByColumn(7)->setWidth(10); //TGL EXPIRE
-        $objPHPExcel->getActiveSheet()->getColumnDimensionByColumn(8)->setWidth(20);
-        $objPHPExcel->getActiveSheet()->getColumnDimensionByColumn(9)->setWidth(20);
-        $objPHPExcel->getActiveSheet()->getColumnDimensionByColumn(10)->setWidth(20);
+        $objPHPExcel->getActiveSheet()->getColumnDimensionByColumn(8)->setWidth(10);
+        $objPHPExcel->getActiveSheet()->getColumnDimensionByColumn(9)->setWidth(10);
+        $objPHPExcel->getActiveSheet()->getColumnDimensionByColumn(10)->setWidth(10);
         $objPHPExcel->getActiveSheet()->getColumnDimensionByColumn(11)->setWidth(40);  //KET
 
         for ($x = 'A'; $x <= 'H'; $x++) { //bwt judul2nya
@@ -3009,7 +3009,7 @@ class Laporangfk extends Rumahsakit
                     );
                 } else if ($x == 'B') {
                     $objPHPExcel->getActiveSheet()->getStyle($x . $baris)->getAlignment()->applyFromArray(
-                        array('horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER, 'vertical'   => PHPExcel_Style_Alignment::VERTICAL_CENTER, 'rotation'   => 0,)
+                        array('horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_LEFT, 'vertical'   => PHPExcel_Style_Alignment::VERTICAL_CENTER, 'rotation'   => 0,)
                     );
                 } else if ($x == 'C') {
                     $objPHPExcel->getActiveSheet()->getStyle($x . $baris)->getAlignment()->applyFromArray(
@@ -3021,7 +3021,7 @@ class Laporangfk extends Rumahsakit
                     );
                 } else if ($x == 'E') {
                     $objPHPExcel->getActiveSheet()->getStyle($x . $baris)->getAlignment()->applyFromArray(
-                        array('horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER, 'vertical'   => PHPExcel_Style_Alignment::VERTICAL_CENTER, 'rotation'   => 0,)
+                        array('horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_LEFT, 'vertical'   => PHPExcel_Style_Alignment::VERTICAL_CENTER, 'rotation'   => 0,)
                     );
                 } else if ($x == 'F') {
                     $objPHPExcel->getActiveSheet()->getStyle($x . $baris)->getAlignment()->applyFromArray(
@@ -3029,7 +3029,7 @@ class Laporangfk extends Rumahsakit
                     );
                 } else if ($x == 'G') {
                     $objPHPExcel->getActiveSheet()->getStyle($x . $baris)->getAlignment()->applyFromArray(
-                        array('horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_RIGHT, 'vertical'   => PHPExcel_Style_Alignment::VERTICAL_CENTER, 'rotation'   => 0,)
+                        array('horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_LEFT, 'vertical'   => PHPExcel_Style_Alignment::VERTICAL_CENTER, 'rotation'   => 0,)
                     );
                 } else if ($x == 'H') {
                     $objPHPExcel->getActiveSheet()->getStyle($x . $baris)->getAlignment()->applyFromArray(
@@ -3097,11 +3097,11 @@ class Laporangfk extends Rumahsakit
         for ($x = 'A'; $x <= 'L'; $x++) {
             if ($x == 'A') {
                 $objPHPExcel->getActiveSheet()->getStyle($x . $baris)->getAlignment()->applyFromArray(
-                    array('horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER, 'vertical'   => PHPExcel_Style_Alignment::VERTICAL_CENTER, 'rotation'   => 0,)
+                    array('horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_LEFT, 'vertical'   => PHPExcel_Style_Alignment::VERTICAL_CENTER, 'rotation'   => 0,)
                 );
             } else if ($x == 'B') {
                 $objPHPExcel->getActiveSheet()->getStyle($x . $baris)->getAlignment()->applyFromArray(
-                    array('horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER, 'vertical'   => PHPExcel_Style_Alignment::VERTICAL_CENTER, 'rotation'   => 0,)
+                    array('horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_LEFT, 'vertical'   => PHPExcel_Style_Alignment::VERTICAL_CENTER, 'rotation'   => 0,)
                 );
             } else if ($x == 'C') {
                 $objPHPExcel->getActiveSheet()->getStyle($x . $baris)->getAlignment()->applyFromArray(
@@ -3183,7 +3183,7 @@ class Laporangfk extends Rumahsakit
         $styleArray['alignment']['horizontal'] = PHPExcel_Style_Alignment::HORIZONTAL_CENTER;
         $styleArray['borders'] = array();
         $styleArray['font']['bold'] = false;
-
+        $timestamp = strtotime(date('Y-m-d'));
         $objPHPExcel->getActiveSheet()->getStyle('G' . $rowCellNum . ':I' . $rowCellNum)->applyFromArray($styleArray);
         $objPHPExcel->getActiveSheet()->mergeCells('G' . $rowCellNum . ':I' . $rowCellNum);
         $objPHPExcel->getActiveSheet()->setCellValue('G' . $rowCellNum, $profil['kota'] . ', ' . date('d', $timestamp) . ' ' . $this->mmain->getBulanIndonesia(date('m', $timestamp)) . ' ' . date('Y', $timestamp));
@@ -3195,17 +3195,23 @@ class Laporangfk extends Rumahsakit
 
         $rowCellNum++;
         $objPHPExcel->getActiveSheet()->getStyle('G' . $rowCellNum . ':I' . $rowCellNum)->applyFromArray($styleArray);
+        $objPHPExcel->getActiveSheet()->getStyle('B' . $rowCellNum . ':B' . $rowCellNum)->applyFromArray($styleArray);
         $objPHPExcel->getActiveSheet()->mergeCells('G' . $rowCellNum . ':I' . $rowCellNum);
+        $objPHPExcel->getActiveSheet()->setCellValue('B' . $rowCellNum, 'Petugas');
         $objPHPExcel->getActiveSheet()->setCellValue('G' . $rowCellNum, 'Kepala Instalasi Farmasi');
 
         $rowCellNum += 4;
         $objPHPExcel->getActiveSheet()->getStyle('G' . $rowCellNum . ':I' . $rowCellNum)->applyFromArray($styleArray);
+        $objPHPExcel->getActiveSheet()->getStyle('B' . $rowCellNum . ':B' . $rowCellNum)->applyFromArray($styleArray);
         $objPHPExcel->getActiveSheet()->mergeCells('G' . $rowCellNum . ':I' . $rowCellNum);
+        $objPHPExcel->getActiveSheet()->setCellValue('B' . $rowCellNum, 'Marsudiyanti Ningtyas');
         $objPHPExcel->getActiveSheet()->setCellValue('G' . $rowCellNum, $profil['nama_kepala']);
 
         $rowCellNum++;
         $objPHPExcel->getActiveSheet()->getStyle('G' . $rowCellNum . ':I' . $rowCellNum)->applyFromArray($styleArray);
+        $objPHPExcel->getActiveSheet()->getStyle('B' . $rowCellNum . ':B' . $rowCellNum)->applyFromArray($styleArray);
         $objPHPExcel->getActiveSheet()->mergeCells('G' . $rowCellNum . ':I' . $rowCellNum);
+        $objPHPExcel->getActiveSheet()->setCellValue('B' . $rowCellNum, '19750707 200604 2 008');
         $objPHPExcel->getActiveSheet()->setCellValue('G' . $rowCellNum, $profil['nip_kepala']);
 
         $objWriter = IOFactory::createWriter($objPHPExcel, 'Excel5');

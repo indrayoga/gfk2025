@@ -147,7 +147,8 @@ class MLaporangfk extends MMain
             left join apt_satuan_kecil sk on o.kd_satuan_kecil = sk.kd_satuan_kecil 
             left join apt_supplier supp on pn.kd_supplier = supp.kd_supplier
             where date(pn.tgl_penerimaan) between '$periodeawal' and '$periodeakhir'
-                $unit $supplier $kat
+                $unit $supplier $kat 
+                AND pn.kd_supplier !='DS0074'
             group by o.kd_obat,pnd.harga_beli
             ORDER BY pn.tgl_penerimaan,pn.kd_supplier ASC");
         return $query->result_array();
